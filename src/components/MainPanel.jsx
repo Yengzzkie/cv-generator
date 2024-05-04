@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { v4 as uuid } from "uuid";
 import PersonalPanel from "../components/PersonalPanel";
-// import PreviewPanel from "../components/PreviewPanel";
+import PreviewPanel from "../components/PreviewPanel";
 import EducationPanel from "../components/EducationPanel";
 import WorkPanel from "../components/WorkPanel";
 import "../styles/MainPanel.css";
@@ -35,9 +35,13 @@ export default function MainPanel() {
     setContact("123-456-7890");
   };
 
+
   return (
-    <div className="main-panel">
+    <div className="main-panel"> 
       <div className="sub-panel">
+
+      <a href="#preview-panel"><button className="preview-button">Preview</button></a>
+        
         <PersonalPanel
           setName={setName}
           setEmail={setEmail}
@@ -45,64 +49,13 @@ export default function MainPanel() {
           clearPreview={clearPreview}
         />
 
-        <h2>Education</h2>
         <EducationPanel education={education} handleAddEducation={handleAddEducation} setEducation={setEducation} />
-        <h2>Work Experience</h2>
+
         <WorkPanel work={work} setWork={setWork} handleAddWork={handleAddWork} />
       
       </div>
- 
- 
-      <div className="preview-panel">
 
-        <h1 className="name">{name}</h1>
-        <div className="socials">
-          <p>
-            <i className="fa-brands fa-github"></i> :{" "}
-          </p>
-          <p>
-            <i className="fa-brands fa-linkedin"></i> :
-          </p>
-          <p>
-            <span className="material-symbols-outlined">language</span> :{" "}
-            {email}
-          </p>
-          <p>
-            <span className="material-symbols-outlined">phone_iphone</span>:{" "}
-            {contact}
-          </p>
-        </div>
-
-
-        <h2>Education</h2>
-        <hr></hr>
-        {education.map((educ) => (
-          <div key={educ.id}>
-            <div className="educ-info">
-              <div><span>{educ.from}</span> - <span>{educ.to}</span></div>
-              <p><b>{educ.school}</b></p>
-              <p>{educ.field}</p>
-            </div>
-          </div>
-        ))}
-
-        <h2>Work Experience</h2>
-        <hr></hr>
-        {work.map((work) => (
-          <div className="work-info-wrapper" key={work.id}>
-            <div className="work-info">
-              <div><span>{work.from}</span> - <span>{work.to}</span></div>
-              <p><b>{work.company}</b></p>
-              <p>{work.position}</p>
-            </div>
-            <div>
-              <h4>Job description</h4>
-              {work.description}
-            </div>
-        </div>
-        ))}
-
-      </div>
+      <PreviewPanel name={name} email={email} contact={contact} education={education} work={work} />
 
     </div>
   );

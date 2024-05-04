@@ -24,7 +24,7 @@ export default function PersonalPanel({ setName, setEmail, setContact, clearPrev
 
   return (
     <div className="user-panel">
-      <h1>Personal</h1>
+      <h2>Personal</h2>
       <input
         type="text"
         name="name"
