@@ -2,6 +2,7 @@ import { useState } from "react";
 import PersonalPanel from "../components/PersonalPanel";
 // import PreviewPanel from "../components/PreviewPanel";
 import EducationPanel from "../components/EducationPanel";
+import WorkPanel from "../components/WorkPanel";
 import "../styles/MainPanel.css";
 
 export default function MainPanel() {
@@ -10,12 +11,18 @@ export default function MainPanel() {
   const [contact, setContact] = useState("123-456-7890");
 
   const [education, setEducation] = useState([{from: '2008', to: '2012', school: 'University of Youtube', field: 'BS Nursing'}])
-  
+  const [work, setWork] = useState([{from: '2013', to: '2015', company: 'Apple Inc', position: 'iTunes Support', description: 'I did some blah blah blah'}])
+
   function handleAddEducation() {
     let updatedEducation = [...education];
     updatedEducation.push({from: '', to: '', school: '', field: ''})
     setEducation(updatedEducation)
-    console.log(education)
+  }
+
+  function handleAddWork() {
+    let updatedWork = [...work];
+    updatedWork.push({from: 'From', to: 'To', company: 'Company Name', position: 'Job Title / Position', description: 'Job Description'})
+    setWork(updatedWork)
   }
 
   const clearPreview = () => {
@@ -35,6 +42,9 @@ export default function MainPanel() {
 
         <h2>Education</h2>
         <EducationPanel education={education} handleAddEducation={handleAddEducation} setEducation={setEducation} />
+        <h2>Work Experience</h2>
+        <WorkPanel work={work} setWork={setWork} handleAddWork={handleAddWork} />
+      
       </div>
  
  
@@ -69,6 +79,22 @@ export default function MainPanel() {
               <p>{edu.field}</p>
             </div>
           </div>
+        ))}
+
+        <h2>Work Experience</h2>
+        <hr></hr>
+        {work.map((work, index) => (
+          <div className="work-info" key={index}>
+            <div className="educ-info">
+              <div><span>{work.from}</span> - <span>{work.to}</span></div>
+              <p><b>{work.company}</b></p>
+              <p>{work.position}</p>
+            </div>
+            <div>
+              <h4>Job description</h4>
+              {work.description}
+            </div>
+        </div>
         ))}
 
       </div>
