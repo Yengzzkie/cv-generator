@@ -1,4 +1,5 @@
 .main-panel {
+  position: fixed;
   display: grid;
   grid-template-columns: 2fr 8fr;
   gap: 1rem;
@@ -10,18 +11,31 @@
   display: grid;
   grid-auto-rows: auto;
   gap: 20px;
+  width: 400px;
+  height: 100%;
+  overflow-y: scroll;
 }
 
-.preview-button {
+.sub-panel a{
   display: none;
   position: fixed;
   top: 2%;
   right: 5%;
+  padding: 1rem 0;
+}
+
+h3 {
+  margin-left: 1rem;
 }
 
 @media screen and (max-width: 1024px) {
   .main-panel {
     display: block;
+    position: relative;
+  }
+
+  .sub-panel {
+    width: auto;
   }
 
   .preview-button {

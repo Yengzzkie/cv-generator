@@ -4,6 +4,7 @@ import PersonalPanel from "../components/PersonalPanel";
 import PreviewPanel from "../components/PreviewPanel";
 import EducationPanel from "../components/EducationPanel";
 import WorkPanel from "../components/WorkPanel";
+import Header from "../components/Header";
 import "../styles/MainPanel.css";
 
 export default function MainPanel() {
@@ -41,7 +42,7 @@ export default function MainPanel() {
       <div className="sub-panel">
 
       <a href="#preview-panel"><button className="preview-button">Preview</button></a>
-        
+        <Header />
         <PersonalPanel
           setName={setName}
           setEmail={setEmail}

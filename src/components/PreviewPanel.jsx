@@ -1,29 +1,11 @@
 import '../styles/PreviewPanel.css';
+import PersonalInfo from '../components/PersonalInfo';
 
 export default function PreviewPanel({ name, email, contact, education, work }) {
 
   return (
     <div className="preview-panel" id="preview-panel">
-
-        <h1 className="name">{name}</h1>
-        <div className="socials">
-          <p>
-            <i className="fa-brands fa-github"></i> :{" "}
-          </p>
-          <p>
-            <i className="fa-brands fa-linkedin"></i> :
-          </p>
-          <p>
-            <span className="material-symbols-outlined">language</span> :{" "}
-            {email}
-          </p>
-          <p>
-            <span className="material-symbols-outlined">phone_iphone</span>:{" "}
-            {contact}
-          </p>
-        </div>
-
-
+      <PersonalInfo name={name} email={email} contact={contact} />
         <h3>Education</h3>
         <hr></hr>
         {education.map((educ) => (
