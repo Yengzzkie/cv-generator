@@ -1,10 +1,11 @@
 .preview-panel {
-  background: #ebebebcc;
+  position: sticky;
+  top: 1rem;
+  background: #fff;
   color: rgb(47, 47, 47);
   border: 1px solid #fff;
-  height: 100%;
-  max-height: 95vh;
-  width: 100%;
+  height: 297mm;
+  width: 210mm;
   max-width: 800px;
   margin: 1rem auto;
   overflow-y: auto;
@@ -36,16 +37,7 @@ p {
 }
 
 .preview-panel::-webkit-scrollbar {
-  background: transparent;
-}
-
-.preview-panel::-webkit-scrollbar-thumb {
-  background: #75757593;
-  border-radius: 20px;
-}
-
-.preview-panel::-webkit-scrollbar-thumb:hover {
-  background: #2a2a2a;
+  display: none;
 }
 
 @media screen and (max-width: 1024px) {

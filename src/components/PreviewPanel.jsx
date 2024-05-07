@@ -1,11 +1,11 @@
 import '../styles/PreviewPanel.css';
 import PersonalInfo from '../components/PersonalInfo';
 
-export default function PreviewPanel({ name, email, contact, education, work }) {
+export default function PreviewPanel({ name, email, contact, linkedin, github, education, work }) {
 
   return (
     <div className="preview-panel" id="preview-panel">
-      <PersonalInfo name={name} email={email} contact={contact} />
+      <PersonalInfo name={name} email={email} contact={contact} linkedin={linkedin} github={github} />
         <h3>Education</h3>
         <hr></hr>
         {education.map((educ) => (
@@ -17,7 +17,6 @@ export default function PreviewPanel({ name, email, contact, education, work }) 
             </div>
           </div>
         ))}
-
         <h3>Work Experience</h3>
         <hr></hr>
         {work.map((work) => (
@@ -33,7 +32,6 @@ export default function PreviewPanel({ name, email, contact, education, work }) 
             </div>
         </div>
         ))}
-
-      </div>
+    </div>
   )
 }

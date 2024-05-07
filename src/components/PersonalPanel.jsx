@@ -1,6 +1,6 @@
 import "../styles/PersonalPanel.css";
 
-export default function PersonalPanel({ setName, setEmail, setContact, clearPreview }) {
+export default function PersonalPanel({ setName, setEmail, setContact, setLinkedIn, setGithub, clearPreview }) {
 
   function handleNameChange(e) {
     setName(e.target.value)
@@ -12,6 +12,14 @@ export default function PersonalPanel({ setName, setEmail, setContact, clearPrev
 
   function handleContactChange(e) {
     setContact(e.target.value)
+  }
+
+  function handleLinkedinChange(e) {
+    setLinkedIn(e.target.value)
+  }
+
+  function handleGithubChange(e) {
+    setGithub(e.target.value)
   }
 
   const handleClearInput = () => {
@@ -43,6 +51,18 @@ export default function PersonalPanel({ setName, setEmail, setContact, clearPrev
         placeholder="Contact"
         pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
         onChange={handleContactChange}
+      />
+      <input
+        type="text"
+        name="linkedin"
+        placeholder="LinkedIn"
+        onChange={handleLinkedinChange}
+      />
+      <input
+        type="text"
+        name="github"
+        placeholder="Github"
+        onChange={handleGithubChange}
       />
       <button onClick={handleClearInput}>Clear</button>
     </div>

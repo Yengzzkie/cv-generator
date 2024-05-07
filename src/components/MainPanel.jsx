@@ -13,6 +13,8 @@ export default function MainPanel() {
   const [name, setName] = useState("John Doe");
   const [email, setEmail] = useState("you@yourdomain.com");
   const [contact, setContact] = useState("123-456-7890");
+  const [linkedin, setLinkedIn] = useState('linkedin.com/yourname');
+  const [github, setGithub] = useState('@')
   const [education, setEducation] = useState([{id: uuid(), from: '2008', to: '2012', school: 'University of Youtube', field: 'BS Nursing'}])
   const [work, setWork] = useState([{id: uuid(), from: '2013', to: '2015', company: 'Apple Inc', position: 'iTunes Support', description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio, eveniet repellat! Labore earum ad sed iure a corrupti ratione tenetur quam. Sequi, magni quo. Et explicabo earum fuga illo iure.'}])
   
@@ -47,6 +49,8 @@ export default function MainPanel() {
           setName={setName}
           setEmail={setEmail}
           setContact={setContact}
+          setLinkedIn={setLinkedIn}
+          setGithub={setGithub}
           clearPreview={clearPreview}
         />
 
@@ -56,7 +60,7 @@ export default function MainPanel() {
       
       </div>
 
-      <PreviewPanel name={name} email={email} contact={contact} education={education} work={work} />
+      <PreviewPanel name={name} email={email} contact={contact} linkedin={linkedin} github={github} education={education} work={work} />
 
     </div>
   );

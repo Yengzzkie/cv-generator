@@ -1,5 +1,4 @@
 .main-panel {
-  position: fixed;
   display: grid;
   grid-template-columns: 2fr 8fr;
   gap: 1rem;
@@ -8,12 +7,10 @@
 }
 
 .sub-panel {
-  display: grid;
-  grid-auto-rows: auto;
-  gap: 20px;
   width: 400px;
   height: 100%;
   overflow-y: scroll;
+  padding: 1rem;
 }
 
 .sub-panel a{
