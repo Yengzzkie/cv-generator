@@ -6,6 +6,7 @@ import EducationPanel from "../components/EducationPanel";
 import WorkPanel from "../components/WorkPanel";
 import Header from "../components/Header";
 import "../styles/MainPanel.css";
+import AboutPanel from "./AboutPanel";
 
 export default function MainPanel() {
 
@@ -14,10 +15,11 @@ export default function MainPanel() {
   const [email, setEmail] = useState("you@yourdomain.com");
   const [contact, setContact] = useState("123-456-7890");
   const [linkedin, setLinkedIn] = useState('linkedin.com/yourname');
-  const [github, setGithub] = useState('@')
+  const [github, setGithub] = useState('username')
   const [education, setEducation] = useState([{id: uuid(), from: '2008', to: '2012', school: 'University of Youtube', field: 'BS Nursing'}])
   const [work, setWork] = useState([{id: uuid(), from: '2013', to: '2015', company: 'Apple Inc', position: 'iTunes Support', description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio, eveniet repellat! Labore earum ad sed iure a corrupti ratione tenetur quam. Sequi, magni quo. Et explicabo earum fuga illo iure.'}])
-  
+  const [about, setAbout] = useState('lorem ipsum')
+
   //new object handlers
   function handleAddEducation() {
     let updatedEducation = [...education];
@@ -54,13 +56,15 @@ export default function MainPanel() {
           clearPreview={clearPreview}
         />
 
+        <AboutPanel setAbout={setAbout}/>
+
         <EducationPanel education={education} handleAddEducation={handleAddEducation} setEducation={setEducation} />
 
         <WorkPanel work={work} setWork={setWork} handleAddWork={handleAddWork} />
       
       </div>
 
-      <PreviewPanel name={name} email={email} contact={contact} linkedin={linkedin} github={github} education={education} work={work} />
+      <PreviewPanel name={name} email={email} contact={contact} linkedin={linkedin} github={github} about={about} education={education} work={work} />
 
     </div>
   );
